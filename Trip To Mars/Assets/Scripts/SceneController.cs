@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
+    [SerializeField] public float secondsToGameOver = 0.75f;
+
     public void LoadNextScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -14,10 +16,28 @@ public class SceneController : MonoBehaviour
     public void LoadStartScene()
     {
         SceneManager.LoadScene(0);
+        FindObjectOfType<GameSession>().ResetGame();
+    }
+
+    public void LoadGameOver()
+    {
+        StartCoroutine(WaitAfterDeath());
+    }
+
+    public void LoadMainGame()
+    {
+        SceneManager.LoadScene(1);
+        FindObjectOfType<GameSession>().ResetGame();
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public IEnumerator WaitAfterDeath()
+    {
+        yield return new WaitForSeconds(secondsToGameOver);
+        SceneManager.LoadScene("GameOver");
     }
 }
