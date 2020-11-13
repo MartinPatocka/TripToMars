@@ -11,8 +11,12 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
     public bool isTargetPlayStore;
     public bool isTestAd;
 
+    private CoinManager coinManager;
+
     void Start()
     {
+        coinManager = FindObjectOfType<CoinManager>();
+
         Advertisement.AddListener(this);
         InitializeAdvertisement();
     }
@@ -68,7 +72,7 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
             case ShowResult.Skipped:
                 break;
             case ShowResult.Finished:
-                if (placementId == rewardedVideoAd) { Debug.Log("Reward The Player"); }
+                if (placementId == rewardedVideoAd) { coinManager.AddCoin(); }
                 if (placementId == interstitialAd) { Debug.Log("Finished interstitial"); }
                 break;
         }

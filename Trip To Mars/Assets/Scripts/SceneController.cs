@@ -22,11 +22,13 @@ public class SceneController : MonoBehaviour
     public void LoadGameOver()
     {
         StartCoroutine(WaitAfterDeath());
+        FindObjectOfType<CoinManager>().LoadPlayerData();
     }
 
     public void LoadMainGame()
     {
         SceneManager.LoadScene(1);
+        FindObjectOfType<CoinManager>().LoadPlayerData();
         FindObjectOfType<GameSession>().ResetGame();
     }
 

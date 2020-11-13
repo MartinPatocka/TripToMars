@@ -23,11 +23,13 @@ public class Rocket : MonoBehaviour
 
     private Rigidbody2D rigidbody;
     private GameSession gameSession;
+    private CoinManager coinManager;
 
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         gameSession = FindObjectOfType<GameSession>();
+        coinManager = FindObjectOfType<CoinManager>();
 
         currentFuel = maxFuel;
         fuelBar.SetMaxFuel(maxFuel);
@@ -110,6 +112,11 @@ public class Rocket : MonoBehaviour
         if (collision.gameObject.CompareTag("Asteroid"))
         {
             Die();
+        }
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            coinManager.AddCoin();
+            Destroy(collision.gameObject);
         }
     }
 
