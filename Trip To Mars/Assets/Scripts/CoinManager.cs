@@ -10,6 +10,11 @@ public class CoinManager : MonoBehaviour
 
     private static CoinManager instance = null;
 
+    private void Start()
+    {
+        totalCoins = PlayerPrefs.GetInt("TotalCoins");
+    }
+
     private void Awake()
     {
         // if the singleton hasn't been initialized yet
@@ -25,13 +30,13 @@ public class CoinManager : MonoBehaviour
 
     public int GetCoins()
     {
-        return totalCoins;
+        return PlayerPrefs.GetInt("TotalCoins");
     }
 
     public void AddCoin()
     {
         totalCoins += coinValue;
-        
+        PlayerPrefs.SetInt("TotalCoins", totalCoins);
     }
 
 }

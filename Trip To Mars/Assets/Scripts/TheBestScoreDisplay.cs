@@ -21,6 +21,4 @@ public class TheBestScoreDisplay : MonoBehaviour
     {
         scoreText.text = gameSession.GetTheBestScore().ToString();
     }
-
-
 }
