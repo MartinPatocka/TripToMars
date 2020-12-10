@@ -31,18 +31,7 @@ public class CoinManager : MonoBehaviour
     public void AddCoin()
     {
         totalCoins += coinValue;
-        //SavePlayerData();
+        
     }
 
-    public void SavePlayerData()
-    {
-        SaveSystem.SavePlayer(this);
-    }
-
-    public void LoadPlayerData()
-    {
-        PlayerData playerData = SaveSystem.LoadPlayer();
-
-        totalCoins = playerData.coin;
-    }
 }

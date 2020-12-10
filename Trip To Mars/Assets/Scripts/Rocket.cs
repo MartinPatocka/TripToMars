@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour
 {
+    [SerializeField] Sprite image1;
+    [SerializeField] Sprite image2;
+    [SerializeField] SpriteRenderer rocketImage;
     [Header("Power")]
     [SerializeField] float turnThrust = 100f;
     [SerializeField] float forceThrust = 100f;
@@ -40,6 +43,20 @@ public class Rocket : MonoBehaviour
         MouseControll();
     }
 
+    private void ChangeSkin()
+    {
+        //scriptable object
+        if (rocketImage.sprite == image1)
+        {
+            rocketImage.sprite = image2;
+        }
+        else
+        {
+            rocketImage.sprite = image1;
+        }
+        
+    }
+
     private void MouseControll()
     {
         if (currentFuel <= 0) {
@@ -49,6 +66,7 @@ public class Rocket : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+                ChangeSkin();
                 flameVFX.Play();
                 if (Input.mousePosition.x < Screen.width / 2)
                 {

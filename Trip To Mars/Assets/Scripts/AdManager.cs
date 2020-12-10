@@ -6,18 +6,38 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
     private string playStoreID = "3889073";
 
     private string interstitialAd = "video";
-    private string rewardedVideoAd = "rewardedVideo";
+    private static readonly string rewardedVideoAd = "rewardedVideo";
 
     public bool isTargetPlayStore;
-    public bool isTestAd;
 
+#if UNITY_EDITOR
+    public bool isTestAd = true;
+#else
+    public bool isTestAd = false;
+#endif
+    
     private CoinManager coinManager;
+
+    public static AdManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            Advertisement.AddListener(this);
+            Advertisement.Initialize(playStoreID, isTestAd);
+        } else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {
         coinManager = FindObjectOfType<CoinManager>();
 
-        Advertisement.AddListener(this);
         InitializeAdvertisement();
     }
 
@@ -39,13 +59,13 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
         Advertisement.Show(interstitialAd);
     }
 
-    public void PlayRewardedVideoAd()
+    public static void PlayRewardedVideoAd()
     {
-        if (!Advertisement.IsReady(rewardedVideoAd))
+        if (Advertisement.IsReady(rewardedVideoAd))
         {
-            return;
+            Advertisement.Show(rewardedVideoAd);
         }
-        Advertisement.Show(rewardedVideoAd);
+      
     }
 
     public void OnUnityAdsReady(string placementId)
@@ -72,7 +92,10 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
             case ShowResult.Skipped:
                 break;
             case ShowResult.Finished:
-                if (placementId == rewardedVideoAd) { coinManager.AddCoin(); }
+                if (placementId == rewardedVideoAd) {
+                    coinManager.AddCoin();
+                    Debug.Log("Add coin");
+                }
                 if (placementId == interstitialAd) { Debug.Log("Finished interstitial"); }
                 break;
         }
