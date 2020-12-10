@@ -621,7 +621,7 @@ PrefabInstance:
     - target: {fileID: 1659110930674071098, guid: 62c26e7c3ce04412bbd0b9bf01063ddf, type: 3}
       propertyPath: rocketImageSO
       value: 
-      objectReference: {fileID: 11400000, guid: 2f4cf90c1b282481c8be3e6a64219378, type: 2}
+      objectReference: {fileID: 11400000, guid: 098f73e8fc2de455cb05027490d2e06d, type: 2}
     - target: {fileID: 1659110930674071098, guid: 62c26e7c3ce04412bbd0b9bf01063ddf, type: 3}
       propertyPath: rocketCollider
       value: 
