@@ -8,7 +8,10 @@ public class Rocket : MonoBehaviour
 {
     [SerializeField] Sprite image1;
     [SerializeField] Sprite image2;
+
     [SerializeField] SpriteRenderer rocketImage;
+    [SerializeField] PolygonCollider2D rocketCollider;
+
     [Header("Power")]
     [SerializeField] float turnThrust = 100f;
     [SerializeField] float forceThrust = 100f;
@@ -28,11 +31,16 @@ public class Rocket : MonoBehaviour
     private GameSession gameSession;
     private CoinManager coinManager;
 
+    [Header("ScriptableObject")]
+    public RocketScriptableObject rocketImageSO;
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         gameSession = FindObjectOfType<GameSession>();
         coinManager = FindObjectOfType<CoinManager>();
+
+        SetScriptableObject();
 
         currentFuel = maxFuel;
         fuelBar.SetMaxFuel(maxFuel);
@@ -41,6 +49,13 @@ public class Rocket : MonoBehaviour
     void Update()
     {
         MouseControll();
+    }
+
+    private void SetScriptableObject()
+    {
+        rocketImage.sprite = rocketImageSO.rocketImage;
+        rocketCollider = rocketImageSO.rocketCollider;
+        maxFuel = rocketImageSO.maxFuel;
     }
 
     private void ChangeSkin()
@@ -66,7 +81,6 @@ public class Rocket : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                ChangeSkin();
                 flameVFX.Play();
                 if (Input.mousePosition.x < Screen.width / 2)
                 {

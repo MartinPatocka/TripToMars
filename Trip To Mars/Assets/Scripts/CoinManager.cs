@@ -17,11 +17,10 @@ public class CoinManager : MonoBehaviour
 
     private void Awake()
     {
-        // if the singleton hasn't been initialized yet
         if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
-            return;//Avoid doing anything else
+            return;
         }
 
         instance = this;

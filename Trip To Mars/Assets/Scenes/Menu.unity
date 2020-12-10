@@ -614,7 +614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 492113203}
-  gameSession: {fileID: 0}
+  gameSession: {fileID: 6232140363039158003, guid: 29e240d0838ee44e9890ce40ea39e35a, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

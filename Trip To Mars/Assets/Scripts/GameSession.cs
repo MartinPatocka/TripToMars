@@ -13,7 +13,7 @@ public class GameSession : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("AddScore", 1.0f, 1.0f);
+        InvokeRepeating("AddScore", 1f, 1f);
     }
 
     private void Awake()
@@ -51,6 +51,7 @@ public class GameSession : MonoBehaviour
 
     public int GetTheBestScore()
     {
+
         return theBestScore;
     }
 }
