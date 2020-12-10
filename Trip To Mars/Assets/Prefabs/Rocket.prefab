@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368248043}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.2, y: -0.28, z: 0}
+  m_LocalPosition: {x: -0, y: -0.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1659110930674071102}
@@ -40,7 +40,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368248043}
   serializedVersion: 6
-  lengthInSec: 1
+  lengthInSec: 0.4
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 0.1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -220,9 +220,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minMaxState: 2
+      minColor: {r: 1, g: 0.12657733, b: 0, a: 1}
+      maxColor: {r: 0.9529412, g: 0.61932147, b: 0.39999998, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -284,7 +284,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.9
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -660,7 +660,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 25
+    angle: 1
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -746,7 +746,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.0001
       mode: 0
       spread: 0
       speed:
@@ -865,7 +865,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 50
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1484,7 +1484,7 @@ ParticleSystem:
     flipU: 0
     flipV: 0
   VelocityModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -4888,7 +4888,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 5853653e8c300498e872d00c46249d0c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1cfd40ee795ac45ce992bc0618678b58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4937,7 +4937,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.61328125, y: 1.2070312}
+    oldSize: {x: 0.45333335, y: 1.23}
     newSize: {x: 1.57, y: 3.09}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4992,15 +4992,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f975a34583784112848cdc088555b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image1: {fileID: 21300000, guid: 88dfe5fbb45de4270a0c99312c7dae0a, type: 3}
+  image2: {fileID: 21300000, guid: c6bfe1f21574f494f8b71ce9d0b0de12, type: 3}
+  rocketImage: {fileID: 1659110930674071103}
+  rocketCollider: {fileID: 3190272162833018489, guid: fcadc6e99663543f7b1f5fe02f5ad0e6, type: 3}
   turnThrust: 20
   forceThrust: 45
-  maxFuel: 100
+  maxFuel: 120
   currentFuel: 0
   fuelForThrust: 2
   fuelBar: {fileID: 0}
   deathVFX: {fileID: 159918, guid: a0040bf7072bc2f4e82d887d50a9c5e2, type: 3}
   flameVFX: {fileID: 368248046}
   durationOfExplosion: 3
+  rocketsSO:
+  - {fileID: 11400000, guid: 61e4397d3885e40cb96f16d5693b8700, type: 2}
+  - {fileID: 11400000, guid: 2f4cf90c1b282481c8be3e6a64219378, type: 2}
+  - {fileID: 11400000, guid: 2b442271c103947bd94dfbf4f9bc9350, type: 2}
+  - {fileID: 11400000, guid: 098f73e8fc2de455cb05027490d2e06d, type: 2}
+  rocketImageSO: {fileID: 11400000, guid: 61e4397d3885e40cb96f16d5693b8700, type: 2}
 --- !u!114 &212496734
 MonoBehaviour:
   m_ObjectHideFlags: 0

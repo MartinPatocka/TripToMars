@@ -27,20 +27,20 @@ public class Rocket : MonoBehaviour
     [SerializeField] ParticleSystem flameVFX;
     [SerializeField] float durationOfExplosion = 1f;
 
+    [Header("ScriptableObject")]
+    [SerializeField] RocketScriptableObject[] rocketsSO;
+    public RocketScriptableObject rocketImageSO;
+
     private Rigidbody2D rigidbody;
     private GameSession gameSession;
     private CoinManager coinManager;
 
-    [Header("ScriptableObject")]
-    public RocketScriptableObject rocketImageSO;
-
     void Start()
     {
+        SetScriptableObject();
         rigidbody = GetComponent<Rigidbody2D>();
         gameSession = FindObjectOfType<GameSession>();
         coinManager = FindObjectOfType<CoinManager>();
-
-        SetScriptableObject();
 
         currentFuel = maxFuel;
         fuelBar.SetMaxFuel(maxFuel);
@@ -58,18 +58,31 @@ public class Rocket : MonoBehaviour
         maxFuel = rocketImageSO.maxFuel;
     }
 
-    private void ChangeSkin()
+    public void ChangeOnTheFirstSkin()
     {
-        //scriptable object
-        if (rocketImage.sprite == image1)
-        {
-            rocketImage.sprite = image2;
-        }
-        else
-        {
-            rocketImage.sprite = image1;
-        }
-        
+        rocketImageSO = rocketsSO[1];
+
+        rocketImage.sprite = rocketImageSO.rocketImage;
+        rocketCollider = rocketImageSO.rocketCollider;
+        maxFuel = rocketImageSO.maxFuel;
+    }
+
+    public void ChangeOnTheSecondSkin()
+    {
+        rocketImageSO = rocketsSO[2];
+
+        rocketImage.sprite = rocketImageSO.rocketImage;
+        rocketCollider = rocketImageSO.rocketCollider;
+        maxFuel = rocketImageSO.maxFuel;
+    }
+
+    public void ChangeOnTheThirdSkin()
+    {
+        rocketImageSO = rocketsSO[3];
+
+        rocketImage.sprite = rocketImageSO.rocketImage;
+        rocketCollider = rocketImageSO.rocketCollider;
+        maxFuel = rocketImageSO.maxFuel;
     }
 
     private void MouseControll()

@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 107055729}
   - component: {fileID: 107055728}
   m_Layer: 5
-  m_Name: Ship2 (1)
+  m_Name: Ship3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -514,7 +514,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 107055729}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 949082927}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: BuyTheThirdRocket
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &107055729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -876,7 +888,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 603149732}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 949082927}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: BuyTheSecondRocket
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &603149732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1236,7 +1260,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 684930637}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 949082927}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: BuyTheFirstRocket
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &684930637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1363,6 +1399,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 949082926}
+  - component: {fileID: 949082927}
   m_Layer: 5
   m_Name: ShipsToBuy
   m_TagString: Untagged
@@ -1392,6 +1429,20 @@ RectTransform:
   m_AnchoredPosition: {x: 7.538697, y: 86.70002}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &949082927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949082925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 533ccd5ea9e614947a032a7bff0329cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coins: 0
+  rocket: {fileID: 1659110930674071098, guid: 62c26e7c3ce04412bbd0b9bf01063ddf, type: 3}
 --- !u!1 &953327914
 GameObject:
   m_ObjectHideFlags: 0
