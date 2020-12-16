@@ -13,7 +13,7 @@ public class GameSession : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("AddScore", 1f, 1f);
+        InvokeRepeating("AddScore", 1f, 2f);
     }
 
     private void Awake()

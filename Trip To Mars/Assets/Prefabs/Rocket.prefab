@@ -4992,10 +4992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f975a34583784112848cdc088555b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image1: {fileID: 21300000, guid: 88dfe5fbb45de4270a0c99312c7dae0a, type: 3}
-  image2: {fileID: 21300000, guid: c6bfe1f21574f494f8b71ce9d0b0de12, type: 3}
   rocketImage: {fileID: 1659110930674071103}
-  rocketCollider: {fileID: 3190272162833018489, guid: fcadc6e99663543f7b1f5fe02f5ad0e6, type: 3}
   turnThrust: 20
   forceThrust: 45
   maxFuel: 120
@@ -5010,7 +5007,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2f4cf90c1b282481c8be3e6a64219378, type: 2}
   - {fileID: 11400000, guid: 2b442271c103947bd94dfbf4f9bc9350, type: 2}
   - {fileID: 11400000, guid: 098f73e8fc2de455cb05027490d2e06d, type: 2}
-  rocketImageSO: {fileID: 11400000, guid: 61e4397d3885e40cb96f16d5693b8700, type: 2}
+  rocketImageSO: {fileID: 11400000, guid: 2f4cf90c1b282481c8be3e6a64219378, type: 2}
 --- !u!114 &212496734
 MonoBehaviour:
   m_ObjectHideFlags: 0

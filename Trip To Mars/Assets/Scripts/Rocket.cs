@@ -6,11 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour
 {
-    [SerializeField] Sprite image1;
-    [SerializeField] Sprite image2;
-
     [SerializeField] SpriteRenderer rocketImage;
-    [SerializeField] PolygonCollider2D rocketCollider;
 
     [Header("Power")]
     [SerializeField] float turnThrust = 100f;
@@ -38,6 +34,7 @@ public class Rocket : MonoBehaviour
     void Start()
     {
         SetScriptableObject();
+
         rigidbody = GetComponent<Rigidbody2D>();
         gameSession = FindObjectOfType<GameSession>();
         coinManager = FindObjectOfType<CoinManager>();
@@ -51,40 +48,38 @@ public class Rocket : MonoBehaviour
         MouseControll();
     }
 
+    #region ScriptableObejct
     private void SetScriptableObject()
     {
+        SetValuesOfRocket();
+    }
+
+    private void SetValuesOfRocket()
+    {
         rocketImage.sprite = rocketImageSO.rocketImage;
-        rocketCollider = rocketImageSO.rocketCollider;
         maxFuel = rocketImageSO.maxFuel;
     }
 
     public void ChangeOnTheFirstSkin()
     {
         rocketImageSO = rocketsSO[1];
-
-        rocketImage.sprite = rocketImageSO.rocketImage;
-        rocketCollider = rocketImageSO.rocketCollider;
-        maxFuel = rocketImageSO.maxFuel;
+        SetValuesOfRocket();
     }
 
     public void ChangeOnTheSecondSkin()
     {
         rocketImageSO = rocketsSO[2];
-
-        rocketImage.sprite = rocketImageSO.rocketImage;
-        rocketCollider = rocketImageSO.rocketCollider;
-        maxFuel = rocketImageSO.maxFuel;
+        SetValuesOfRocket();
     }
 
     public void ChangeOnTheThirdSkin()
     {
         rocketImageSO = rocketsSO[3];
-
-        rocketImage.sprite = rocketImageSO.rocketImage;
-        rocketCollider = rocketImageSO.rocketCollider;
-        maxFuel = rocketImageSO.maxFuel;
+        SetValuesOfRocket();
     }
+    #endregion;
 
+    #region RocketControl
     private void MouseControll()
     {
         if (currentFuel <= 0) {
@@ -140,6 +135,7 @@ public class Rocket : MonoBehaviour
             }
         }
     }
+    #endregion;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

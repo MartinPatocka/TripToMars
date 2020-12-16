@@ -6,6 +6,6 @@ using UnityEngine;
 public class RocketScriptableObject : ScriptableObject
 {
     public Sprite rocketImage;
-    public PolygonCollider2D rocketCollider;
+
     public int maxFuel;
 }

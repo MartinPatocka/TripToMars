@@ -16,5 +16,8 @@ EditorBuildSettings:
     guid: 44c67ebe1ef024fab933a3888a0b8f94
   - enabled: 1
     path: Assets/Scenes/Shop.unity
-    guid: f51877f28b1aa4609bf271c0854462b2
+    guid: d5e374ca9718548909f7e78e438d5856
+  - enabled: 1
+    path: Assets/Scenes/CoinShop.unity
+    guid: ad46e5d6bf7ae4545829618bb2b66117
   m_configObjects: {}

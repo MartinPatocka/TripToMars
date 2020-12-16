@@ -38,4 +38,23 @@ public class CoinManager : MonoBehaviour
         PlayerPrefs.SetInt("TotalCoins", totalCoins);
     }
 
+    public void Add100Coin()
+    {
+        totalCoins += 100;
+        PlayerPrefs.SetInt("TotalCoins", totalCoins);
+    }
+
+    public void Add300Coin()
+    {
+        totalCoins += 300;
+        PlayerPrefs.SetInt("TotalCoins", totalCoins);
+    }
+
+    public void Add500Coin()
+    {
+        totalCoins += 500;
+        PlayerPrefs.SetInt("TotalCoins", totalCoins);
+    }
+
+
 }

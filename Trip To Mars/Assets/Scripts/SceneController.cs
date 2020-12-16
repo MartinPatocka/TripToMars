@@ -43,6 +43,13 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("Shop");
     }
 
+    public void LoadCoinShopScene()
+    {
+        prewiousScene = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log(prewiousScene);
+        SceneManager.LoadScene("CoinShop");
+    }
+
     public void LoadBackToScene()
     {
         //int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
