@@ -42,6 +42,11 @@ public class GameSession : MonoBehaviour
     public void AddScore()
     {
         totalScore += scoreValue;
+        PlayerPrefs.SetInt("TotalScore", totalScore);
+        if (totalScore > PlayerPrefs.GetInt("TheBestScore"))
+        {
+            PlayerPrefs.SetInt("TheBestScore", totalScore);
+        }
     }
 
     public void ResetGame()
@@ -49,9 +54,4 @@ public class GameSession : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public int GetTheBestScore()
-    {
-
-        return theBestScore;
-    }
 }

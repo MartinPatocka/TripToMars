@@ -54,7 +54,7 @@ public class Shop : MonoBehaviour
         if (coins >= priceOfFirstShip)
         {
             rocket.ChangeOnTheFirstSkin();
-            coins = coins - priceOfFirstShip;
+            coins -= priceOfFirstShip;
             PlayerPrefs.SetInt("TotalCoins", coins);
             Debug.Log("You Bought Rocket n.: " + 1);
         } else
@@ -68,7 +68,7 @@ public class Shop : MonoBehaviour
         if (coins >= priceOfSecondShip)
         {
             rocket.ChangeOnTheSecondSkin();
-            coins = coins - priceOfSecondShip;
+            coins -= priceOfSecondShip;
             PlayerPrefs.SetInt("TotalCoins", coins);
             Debug.Log("You Bought Rocket n.: " + 2);
         }
@@ -83,7 +83,7 @@ public class Shop : MonoBehaviour
         if (coins >= priceOfThirdShip)
         {
             rocket.ChangeOnTheThirdSkin();
-            coins = coins - priceOfSecondShip;
+            coins -= priceOfSecondShip;
             PlayerPrefs.SetInt("TotalCoins", coins);
             Debug.Log("You Bought Rocket n.: " + 3);
         }
