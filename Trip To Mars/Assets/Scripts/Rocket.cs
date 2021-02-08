@@ -23,16 +23,11 @@ public class Rocket : MonoBehaviour
     [SerializeField] ParticleSystem flameVFX;
     [SerializeField] float durationOfExplosion = 1f;
 
-    [Header("Sounds Efects")]
-    [SerializeField] AudioClip thrustSound;
-    [SerializeField] GameObject deathSound;
-
     [Header("ScriptableObject")]
     [SerializeField] RocketScriptableObject[] rocketsSO;
     public RocketScriptableObject rocketImageSO;
 
     private Rigidbody2D rigidbody;
-    private AudioSource audioSource;
     private GameSession gameSession;
     private CoinManager coinManager;
 
@@ -41,7 +36,6 @@ public class Rocket : MonoBehaviour
         SetScriptableObject();
 
         rigidbody = GetComponent<Rigidbody2D>();
-        audioSource = GetComponent<AudioSource>();
 
         gameSession = FindObjectOfType<GameSession>();
         coinManager = FindObjectOfType<CoinManager>();
@@ -126,7 +120,6 @@ public class Rocket : MonoBehaviour
         currentFuel -= fuel;
         fuelBar.SetFuel(currentFuel);
         rigidbody.AddRelativeForce(Vector3.up* forceThrust);
-        audioSource.PlayOneShot(thrustSound);
     }
 
     public void TouchControll()
@@ -175,8 +168,6 @@ public class Rocket : MonoBehaviour
         FindObjectOfType<SceneController>().LoadGameOver();
         Destroy(gameObject);
         GameObject explosion = Instantiate(deathVFX, transform.position, transform.rotation);
-        GameObject explosionSound = Instantiate(deathSound);
-        Destroy(explosionSound, durationOfExplosion);
         Destroy(explosion, durationOfExplosion);
     }
 

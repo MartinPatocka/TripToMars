@@ -4889,7 +4889,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 117b414ac2de842c490def59cc0eaced, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1cfd40ee795ac45ce992bc0618678b58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4938,7 +4938,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4765625, y: 1.4609375}
+    oldSize: {x: 0.45333335, y: 1.23}
     newSize: {x: 1.57, y: 3.09}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4996,21 +4996,19 @@ MonoBehaviour:
   rocketImage: {fileID: 1659110930674071103}
   turnThrust: 20
   forceThrust: 45
-  maxFuel: 200
+  maxFuel: 120
   currentFuel: 0
   fuelForThrust: 2
   fuelBar: {fileID: 0}
   deathVFX: {fileID: 159918, guid: a0040bf7072bc2f4e82d887d50a9c5e2, type: 3}
   flameVFX: {fileID: 368248046}
   durationOfExplosion: 3
-  thrustSound: {fileID: 8300000, guid: b020baff8088841438e29080b0204f0a, type: 3}
-  deathSound: {fileID: 182663427833066138, guid: 5aa43f8d88b72452a84925cc516fe884, type: 3}
   rocketsSO:
   - {fileID: 11400000, guid: 61e4397d3885e40cb96f16d5693b8700, type: 2}
   - {fileID: 11400000, guid: 2f4cf90c1b282481c8be3e6a64219378, type: 2}
   - {fileID: 11400000, guid: 2b442271c103947bd94dfbf4f9bc9350, type: 2}
   - {fileID: 11400000, guid: 098f73e8fc2de455cb05027490d2e06d, type: 2}
-  rocketImageSO: {fileID: 11400000, guid: 098f73e8fc2de455cb05027490d2e06d, type: 2}
+  rocketImageSO: {fileID: 11400000, guid: 2f4cf90c1b282481c8be3e6a64219378, type: 2}
 --- !u!114 &212496734
 MonoBehaviour:
   m_ObjectHideFlags: 0
