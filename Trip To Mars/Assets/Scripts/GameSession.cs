@@ -16,7 +16,7 @@ public class GameSession : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("AddScore", 1f, 2f);
+        //InvokeRepeating("AddScore", 1f, 2f);
     }
 
     private void Awake()
@@ -55,4 +55,9 @@ public class GameSession : MonoBehaviour
         }
     }
 
+    public void SetScore()
+    {
+        InvokeRepeating(nameof(AddScore), 1f, 2f);
+        totalScore = 0;
+    }
 }

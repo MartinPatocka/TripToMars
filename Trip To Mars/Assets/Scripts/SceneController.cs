@@ -32,6 +32,8 @@ public class SceneController : MonoBehaviour
     public void LoadMainGame()
     {
         SceneManager.LoadScene(1);
+        FindObjectOfType<GameSession>().SetScore();
+        PlayerPrefs.SetInt("TotalScore", GameSession.Instance.GetScore());
     }
 
     public void LoadShopScene()

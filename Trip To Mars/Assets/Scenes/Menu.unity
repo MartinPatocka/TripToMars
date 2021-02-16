@@ -1472,6 +1472,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NewGameButton
       objectReference: {fileID: 0}
+    - target: {fileID: 1146778394409979404, guid: e91bccd27c9f34271b6055b4f5bc90ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMainGame
+      objectReference: {fileID: 0}
     - target: {fileID: 1146778394409979406, guid: e91bccd27c9f34271b6055b4f5bc90ce, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
