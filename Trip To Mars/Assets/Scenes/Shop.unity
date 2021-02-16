@@ -514,19 +514,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 107055729}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 949082927}
-        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: BuyTheThirdRocket
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &107055729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -888,19 +876,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 603149732}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 949082927}
-        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: BuyTheSecondRocket
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &603149732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1261,19 +1237,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 684930637}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 949082927}
-        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: BuyTheFirstRocket
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &684930637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1445,6 +1409,7 @@ MonoBehaviour:
   priceOfFirstShip: 300
   priceOfSecondShip: 500
   priceOfThirdShip: 1000
+  isInteractable: 0
   coins: 0
   rocket: {fileID: 1659110930674071098, guid: 62c26e7c3ce04412bbd0b9bf01063ddf, type: 3}
   buyButton1: {fileID: 684930636}

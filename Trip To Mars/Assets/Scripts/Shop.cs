@@ -19,11 +19,31 @@ public class Shop : MonoBehaviour
     public Button buyButton2;
     public Button buyButton3;
 
+
     private void Start()
     {
         coins = FindObjectOfType<CoinManager>().GetCoins();
+        buyButton1.onClick.AddListener(BuyButton1Click);
+        buyButton2.onClick.AddListener(BuyButton2Click);
+        buyButton3.onClick.AddListener(BuyButton3Click);
+
 
         SetUpButton();
+    }
+
+    public void BuyButton1Click()
+    {
+        BuyRocket(ESkinId.First);
+    }
+
+    public void BuyButton2Click()
+    {
+        BuyRocket(ESkinId.Second);
+    }
+
+    public void BuyButton3Click()
+    {
+        BuyRocket(ESkinId.Third);
     }
 
     private void FixedUpdate()
@@ -48,46 +68,16 @@ public class Shop : MonoBehaviour
             buyButton3.interactable = isInteractable;
         }
     }
-
-    public void BuyTheFirstRocket()
+    
+    public void BuyRocket(ESkinId skinId)
     {
-        if (coins >= priceOfFirstShip)
+        if (coins >= GameSession.Instance.rocketScriptableObject.GetSkin(skinId).rocketPrice)
         {
-            rocket.ChangeOnTheFirstSkin();
-            coins -= priceOfFirstShip;
+            coins -= GameSession.Instance.rocketScriptableObject.GetSkin(skinId).rocketPrice;
+            PlayerPrefs.SetInt("ActualShip",(int)skinId);
             PlayerPrefs.SetInt("TotalCoins", coins);
             Debug.Log("You Bought Rocket n.: " + 1);
         } else
-        {
-            Debug.Log("You dont have enough coins");
-        }
-    }
-
-    public void BuyTheSecondRocket()
-    {
-        if (coins >= priceOfSecondShip)
-        {
-            rocket.ChangeOnTheSecondSkin();
-            coins -= priceOfSecondShip;
-            PlayerPrefs.SetInt("TotalCoins", coins);
-            Debug.Log("You Bought Rocket n.: " + 2);
-        }
-        else
-        {
-            Debug.Log("You dont have enough coins");
-        }
-    }
-
-    public void BuyTheThirdRocket()
-    {
-        if (coins >= priceOfThirdShip)
-        {
-            rocket.ChangeOnTheThirdSkin();
-            coins -= priceOfThirdShip;
-            PlayerPrefs.SetInt("TotalCoins", coins);
-            Debug.Log("You Bought Rocket n.: " + 3);
-        }
-        else
         {
             Debug.Log("You dont have enough coins");
         }

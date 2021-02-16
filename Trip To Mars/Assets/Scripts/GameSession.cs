@@ -11,6 +11,9 @@ public class GameSession : MonoBehaviour
     [SerializeField] int scoreValue = 1;
     public int theBestScore = 0;
 
+    public static GameSession Instance;
+    public RocketScriptableObject rocketScriptableObject;
+
     private void Start()
     {
         InvokeRepeating("AddScore", 1f, 2f);
@@ -18,11 +21,13 @@ public class GameSession : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(this);
         SetUpSingleton();
     }
 
     private void SetUpSingleton()
     {
+        Instance = this;
         int numberGameSessions = FindObjectsOfType<GameSession>().Length;
         if (numberGameSessions > 1)
         {
@@ -33,6 +38,7 @@ public class GameSession : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
+
 
     public int GetScore()
     {
@@ -47,11 +53,6 @@ public class GameSession : MonoBehaviour
         {
             PlayerPrefs.SetInt("TheBestScore", totalScore);
         }
-    }
-
-    public void ResetGame()
-    {
-        Destroy(gameObject);
     }
 
 }

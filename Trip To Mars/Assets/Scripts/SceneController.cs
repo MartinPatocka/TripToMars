@@ -17,7 +17,6 @@ public class SceneController : MonoBehaviour
     public void LoadStartScene()
     {
         SceneManager.LoadScene(0);
-        FindObjectOfType<GameSession>().ResetGame();
     }
 
     public void LoadBackToTheFirstScene()
@@ -33,7 +32,6 @@ public class SceneController : MonoBehaviour
     public void LoadMainGame()
     {
         SceneManager.LoadScene(1);
-        FindObjectOfType<GameSession>().ResetGame();
     }
 
     public void LoadShopScene()

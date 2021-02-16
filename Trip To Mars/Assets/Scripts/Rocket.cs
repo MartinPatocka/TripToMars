@@ -33,8 +33,6 @@ public class Rocket : MonoBehaviour
 
     void Start()
     {
-        SetScriptableObject();
-
         rigidbody = GetComponent<Rigidbody2D>();
 
         gameSession = FindObjectOfType<GameSession>();
@@ -49,37 +47,13 @@ public class Rocket : MonoBehaviour
         MouseControll();
     }
 
-    #region ScriptableObejct
-    private void SetScriptableObject()
+    private void OnEnable()
     {
-        SetValuesOfRocket();
+        RocketSkin rocketSkin = GameSession.Instance.rocketScriptableObject.GetSkin((ESkinId)PlayerPrefs.GetInt("ActualShip"));
+        rocketImage.sprite = rocketSkin.rocketImage;
+        maxFuel = rocketSkin.maxFuel;
     }
-
-    private void SetValuesOfRocket()
-    {
-        rocketImage.sprite = rocketImageSO.rocketImage;
-        maxFuel = rocketImageSO.maxFuel;
-    }
-
-    public void ChangeOnTheFirstSkin()
-    {
-        rocketImageSO = rocketsSO[1];
-        SetValuesOfRocket();
-    }
-
-    public void ChangeOnTheSecondSkin()
-    {
-        rocketImageSO = rocketsSO[2];
-        SetValuesOfRocket();
-    }
-
-    public void ChangeOnTheThirdSkin()
-    {
-        rocketImageSO = rocketsSO[3];
-        SetValuesOfRocket();
-    }
-    #endregion;
-
+    
     #region RocketControl
     private void MouseControll()
     {

@@ -45,3 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalScore: 0
   scoreValue: 1
+  theBestScore: 0
+  rocketScriptableObject: {fileID: 11400000, guid: 1712cdc35c4884457bcb3ca146dfe2c7, type: 2}
