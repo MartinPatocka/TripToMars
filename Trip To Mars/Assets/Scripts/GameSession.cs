@@ -14,11 +14,6 @@ public class GameSession : MonoBehaviour
     public static GameSession Instance;
     public RocketScriptableObject rocketScriptableObject;
 
-    private void Start()
-    {
-        //InvokeRepeating("AddScore", 1f, 2f);
-    }
-
     private void Awake()
     {
         DontDestroyOnLoad(this);

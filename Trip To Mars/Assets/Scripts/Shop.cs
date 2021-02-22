@@ -15,10 +15,14 @@ public class Shop : MonoBehaviour
     public int coins;
     public Rocket rocket;
 
+    [Header("Buttons")]
     public Button buyButton1;
     public Button buyButton2;
     public Button buyButton3;
+    private float positionOfButtonText = 0.3f;
+    public Image imageOfButton;
 
+    public int[] boughtRockets;
 
     private void Start()
     {
@@ -27,23 +31,62 @@ public class Shop : MonoBehaviour
         buyButton2.onClick.AddListener(BuyButton2Click);
         buyButton3.onClick.AddListener(BuyButton3Click);
 
-
         SetUpButton();
+    }
+
+    private void Update()
+    {
+        if (PlayerPrefs.GetInt("BoughtFirstShip") == 1)
+        {
+            Vector3 pos = buyButton1.GetComponentInChildren<Text>().transform.position;
+            pos.x = positionOfButtonText;
+            buyButton1.GetComponentInChildren<Text>().transform.position = pos;
+            buyButton1.GetComponent<Image>().color = UnityEngine.Color.green;
+            buyButton1.GetComponentInChildren<Text>().resizeTextForBestFit = true;
+            buyButton1.GetComponentInChildren<Text>().text = "Change Ship";
+            buyButton1.transform.GetChild(1).transform.gameObject.SetActive(false);
+            GameSession.Instance.rocketScriptableObject.GetSkin(ESkinId.First).rocketPrice = 0;
+        }
+        if (PlayerPrefs.GetInt("BoughtSecondShip") == 1)
+        {
+            Vector3 pos = buyButton2.GetComponentInChildren<Text>().transform.position;
+            pos.x = positionOfButtonText;
+            buyButton2.GetComponentInChildren<Text>().transform.position = pos;
+            buyButton2.GetComponent<Image>().color = UnityEngine.Color.green;
+            buyButton2.GetComponentInChildren<Text>().resizeTextForBestFit = true;
+            buyButton2.GetComponentInChildren<Text>().text = "Change Ship";
+            buyButton2.transform.GetChild(1).transform.gameObject.SetActive(false);
+            GameSession.Instance.rocketScriptableObject.GetSkin(ESkinId.Second).rocketPrice = 0;
+        }
+        if (PlayerPrefs.GetInt("BoughtThirdShip") == 1)
+        {
+            Vector3 pos = buyButton3.GetComponentInChildren<Text>().transform.position;
+            pos.x = positionOfButtonText;
+            buyButton3.GetComponentInChildren<Text>().transform.position = pos;
+            buyButton3.GetComponent<Image>().color = UnityEngine.Color.green;
+            buyButton3.GetComponentInChildren<Text>().resizeTextForBestFit = true;
+            buyButton3.GetComponentInChildren<Text>().text = "Change Ship";
+            buyButton3.transform.GetChild(1).transform.gameObject.SetActive(false);
+            GameSession.Instance.rocketScriptableObject.GetSkin(ESkinId.Third).rocketPrice = 0;
+        }
     }
 
     public void BuyButton1Click()
     {
         BuyRocket(ESkinId.First);
+        PlayerPrefs.SetInt("BoughtFirstShip", 1);
     }
 
     public void BuyButton2Click()
     {
         BuyRocket(ESkinId.Second);
+        PlayerPrefs.SetInt("BoughtSecondShip", 1);
     }
 
     public void BuyButton3Click()
     {
         BuyRocket(ESkinId.Third);
+        PlayerPrefs.SetInt("BoughtThirdShip", 1);
     }
 
     private void FixedUpdate()
@@ -76,7 +119,7 @@ public class Shop : MonoBehaviour
             coins -= GameSession.Instance.rocketScriptableObject.GetSkin(skinId).rocketPrice;
             PlayerPrefs.SetInt("ActualShip",(int)skinId);
             PlayerPrefs.SetInt("TotalCoins", coins);
-            Debug.Log("You Bought Rocket n.: " + 1);
+            Debug.Log("You Bought Rocket");
         } else
         {
             Debug.Log("You dont have enough coins");
