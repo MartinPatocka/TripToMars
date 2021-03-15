@@ -44,7 +44,7 @@ public class Rocket : MonoBehaviour
 
     void Update()
     {
-        MouseControll();
+        TouchControll();
     }
 
     private void OnEnable()
@@ -77,6 +77,33 @@ public class Rocket : MonoBehaviour
         }
     }
 
+    public void TouchControll()
+    {
+        if (Input.touchCount == 1)
+        {
+            if (Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                if (currentFuel <= 0) { return; }
+                else
+                {
+                    foreach (Touch touch in Input.touches)
+                    {
+                        flameVFX.Play();
+                        if (touch.position.x < Screen.width / 2)
+                        {
+                            ThrustToLeft();
+                        }
+                        else if (touch.position.x > Screen.width / 2)
+                        {
+                            ThrustToRight();
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
     public void ThrustToLeft()
     {
         Thrust(fuelForThrust);
@@ -93,22 +120,7 @@ public class Rocket : MonoBehaviour
     {
         currentFuel -= fuel;
         fuelBar.SetFuel(currentFuel);
-        rigidbody.AddRelativeForce(Vector3.up* forceThrust);
-    }
-
-    public void TouchControll()
-    {
-        foreach (Touch touch in Input.touches)
-        {
-            if (touch.position.x < Screen.width / 2)
-            {
-                ThrustToLeft();
-            }
-            else if (touch.position.x > Screen.width / 2)
-            {
-                ThrustToRight();
-            }
-        }
+        rigidbody.AddRelativeForce(Vector3.up * forceThrust);
     }
     #endregion;
 

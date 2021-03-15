@@ -5005,10 +5005,10 @@ MonoBehaviour:
   durationOfExplosion: 3
   rocketsSO:
   - {fileID: 11400000, guid: 61e4397d3885e40cb96f16d5693b8700, type: 2}
-  - {fileID: 11400000, guid: 2f4cf90c1b282481c8be3e6a64219378, type: 2}
-  - {fileID: 11400000, guid: 2b442271c103947bd94dfbf4f9bc9350, type: 2}
-  - {fileID: 11400000, guid: 098f73e8fc2de455cb05027490d2e06d, type: 2}
-  rocketImageSO: {fileID: 11400000, guid: 2f4cf90c1b282481c8be3e6a64219378, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  rocketImageSO: {fileID: 0}
 --- !u!114 &212496734
 MonoBehaviour:
   m_ObjectHideFlags: 0

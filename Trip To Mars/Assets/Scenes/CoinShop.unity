@@ -1248,6 +1248,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: XButtonInShop
       objectReference: {fileID: 0}
+    - target: {fileID: 5595150937298668360, guid: c25d9504506924616aab1b1279768dc5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadStartScene
+      objectReference: {fileID: 0}
     - target: {fileID: 5595150937298668361, guid: c25d9504506924616aab1b1279768dc5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
