@@ -44,6 +44,7 @@ public class Rocket : MonoBehaviour
 
     void Update()
     {
+        //MouseControll();
         TouchControll();
     }
 

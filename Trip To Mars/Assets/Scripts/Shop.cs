@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class Shop : MonoBehaviour
 {
     [Header("Prices of Ships")]
-    [SerializeField] int priceOfFirstShip = 300;
-    [SerializeField] int priceOfSecondShip = 500;
-    [SerializeField] int priceOfThirdShip = 1000;
+    [SerializeField] int priceOfFirstShip = 50;
+    [SerializeField] int priceOfSecondShip = 100;
+    [SerializeField] int priceOfThirdShip = 300;
 
     [SerializeField] bool isInteractable = false;
 
@@ -19,7 +19,7 @@ public class Shop : MonoBehaviour
     public Button buyButton1;
     public Button buyButton2;
     public Button buyButton3;
-    private float positionOfButtonText = 0.3f;
+    private float positionOfButtonText = 620f;
     public Image imageOfButton;
 
     public int[] boughtRockets;

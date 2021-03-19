@@ -18,14 +18,14 @@ MonoBehaviour:
     rocketImage: {fileID: 21300000, guid: 190ccbc59252744429687b474fb898c7, type: 3}
     maxFuel: 100
   - rocketId: 1
-    rocketPrice: 300
+    rocketPrice: 50
     rocketImage: {fileID: 21300000, guid: 1cfd40ee795ac45ce992bc0618678b58, type: 3}
     maxFuel: 120
   - rocketId: 2
-    rocketPrice: 500
+    rocketPrice: 100
     rocketImage: {fileID: 21300000, guid: 766357681a4044ac189930ca301ba4e9, type: 3}
     maxFuel: 150
   - rocketId: 3
-    rocketPrice: 1000
+    rocketPrice: 300
     rocketImage: {fileID: 21300000, guid: 117b414ac2de842c490def59cc0eaced, type: 3}
     maxFuel: 200

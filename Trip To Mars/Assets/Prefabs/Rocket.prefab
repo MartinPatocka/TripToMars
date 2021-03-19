@@ -4994,8 +4994,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocketImage: {fileID: 1659110930674071103}
-  turnThrust: 20
-  forceThrust: 45
+  turnThrust: 10
+  forceThrust: 29
   maxFuel: 120
   currentFuel: 0
   fuelForThrust: 2
