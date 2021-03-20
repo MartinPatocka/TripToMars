@@ -4998,7 +4998,7 @@ MonoBehaviour:
   forceThrust: 29
   maxFuel: 120
   currentFuel: 0
-  fuelForThrust: 2
+  fuelForThrust: 1.6
   fuelBar: {fileID: 0}
   deathVFX: {fileID: 159918, guid: a0040bf7072bc2f4e82d887d50a9c5e2, type: 3}
   flameVFX: {fileID: 368248046}

@@ -19,7 +19,6 @@ public class Shop : MonoBehaviour
     public Button buyButton1;
     public Button buyButton2;
     public Button buyButton3;
-    private float positionOfButtonText = 620f;
     public Image imageOfButton;
 
     public int[] boughtRockets;
@@ -38,9 +37,6 @@ public class Shop : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("BoughtFirstShip") == 1)
         {
-            Vector3 pos = buyButton1.GetComponentInChildren<Text>().transform.position;
-            pos.x = positionOfButtonText;
-            buyButton1.GetComponentInChildren<Text>().transform.position = pos;
             buyButton1.GetComponent<Image>().color = UnityEngine.Color.green;
             buyButton1.GetComponentInChildren<Text>().resizeTextForBestFit = true;
             buyButton1.GetComponentInChildren<Text>().text = "Change Ship";
@@ -49,9 +45,6 @@ public class Shop : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("BoughtSecondShip") == 1)
         {
-            Vector3 pos = buyButton2.GetComponentInChildren<Text>().transform.position;
-            pos.x = positionOfButtonText;
-            buyButton2.GetComponentInChildren<Text>().transform.position = pos;
             buyButton2.GetComponent<Image>().color = UnityEngine.Color.green;
             buyButton2.GetComponentInChildren<Text>().resizeTextForBestFit = true;
             buyButton2.GetComponentInChildren<Text>().text = "Change Ship";
@@ -60,9 +53,6 @@ public class Shop : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("BoughtThirdShip") == 1)
         {
-            Vector3 pos = buyButton3.GetComponentInChildren<Text>().transform.position;
-            pos.x = positionOfButtonText;
-            buyButton3.GetComponentInChildren<Text>().transform.position = pos;
             buyButton3.GetComponent<Image>().color = UnityEngine.Color.green;
             buyButton3.GetComponentInChildren<Text>().resizeTextForBestFit = true;
             buyButton3.GetComponentInChildren<Text>().text = "Change Ship";
